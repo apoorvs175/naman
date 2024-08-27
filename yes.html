@@ -1,0 +1,67 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="./yes_style.css" />
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init(""); // Replace with your actual public key
+      })();
+    </script>
+    <script type="text/javascript">
+      window.onload = function () {
+        document
+          .getElementById("contactForm")
+          .addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            emailjs.sendForm("", "", this).then(
+              () => {
+                alert("Thank you for contacting me!");
+                // Optionally, redirect or clear the form here
+                document.getElementById("contactForm").reset(); // Reset the form after submission
+              },
+              (error) => {
+                alert("Failed to send message. Please try again.");
+                console.log("FAILED...", error);
+              }
+            );
+          });
+      };
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="gif_container">
+        <h1 class="header_text">
+          These words are definitely on your screen, but they come from my 💕 😊
+        </h1>
+        
+      </div>
+      <div class="naman">
+        <p>I’m really sorry yrr for what I did. I never meant to hurt you, and I feel very bad knowing that I did. You mean the lot to me, and the last thing I never have any such intention . I promise I’ll learn from this and never let it happen again. I’ll do whatever it takes to make things right. Mera intention bikiyoon ko le kar bhi aisa ni hai fhir apke liye to duur-duur tak ni.....</p>
+      </div>
+      <div class="form_container">
+        <form id="contactForm">
+           <label for="name">Your good thoughts ... </label>
+          <input type="text" id="name" name="name" required />
+          <label for="name">Maaf kiya kya !</label>
+          <input type="text" id="name" name="name" required />
+
+          <label for="flowers">Would you like flowers?</label>
+          <select id="flowers" name="flowers">
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+          </select>
+
+          <button type="submit" class="submit_btn">Submit</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
